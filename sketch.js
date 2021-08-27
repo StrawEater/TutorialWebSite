@@ -133,51 +133,6 @@ function draw() {
 
 }
 
-function fillArea(start, segment1, segment2, horizontal, fillColor, strokeLine = false) {
-
-  if (segment1 < 0.05 || segment2 < 0.05) {
-
-    return;
-
-  }
-  let squareLaydown = segment1 / segment2;
-  let wholeSize = int(squareLaydown);
-  let subSize = int(((squareLaydown) % 1) * 100) / 100.0;
-  fill(fillColor);
-  noStroke();
-
-  if (!strokeLine) {
-    strokeWeight(2);
-    stroke(fillColor);
-  }
-
-  for (var a = 0; a < wholeSize; a++) {
-
-    if (horizontal) {
-
-      square(start[0] + a * segment2, start[1], segment2);
-
-    } else {
-
-      square(start[0], start[1] + a * segment2, segment2);
-
-    }
-  }
-
-  if (subSize > 0.01) {
-    if (horizontal) {
-      start[0] += wholeSize * segment2;
-
-    } else {
-      start[1] += wholeSize * segment2
-    }
-
-    fillArea(start, segment2, segment1 - wholeSize * segment2, !horizontal, fillColor);
-  }
-
-
-}
-
 function windowResized() {
   resizeCanvas(windowWidth, windowHeight);
   test.centerX = width / 2;
