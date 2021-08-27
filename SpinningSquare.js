@@ -78,7 +78,7 @@ class SpinningSquare {
       }
     }
 
-    if (wholeSize > 0) {
+    if (segment1 - wholeSize * segment2 > 2) {
       if (horizontal) {
         start[0] += wholeSize * segment2;
 
