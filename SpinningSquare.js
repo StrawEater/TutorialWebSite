@@ -32,16 +32,16 @@ class SpinningSquare {
       let inicialStrokeX = (-totalStrokeSize / 2); //- algo;
       let inicialStrokeY = (-totalStrokeSize / 2); //- algo;
 
-      fillArea([inicialStrokeX, inicialStrokeY], totalStrokeSize, gapStrokeSize, true, this.strokeColor);
-      fillArea([inicialStrokeX + (totalStrokeSize - gapStrokeSize), inicialStrokeY], totalStrokeSize, gapStrokeSize, false, this.strokeColor);
-      fillArea([inicialStrokeX, inicialStrokeY + (totalStrokeSize - gapStrokeSize)], totalStrokeSize, gapStrokeSize, true, this.strokeColor);
-      fillArea([inicialStrokeX, inicialStrokeY], totalStrokeSize, gapStrokeSize, false, this.strokeColor);
+      this.fillArea([inicialStrokeX, inicialStrokeY], totalStrokeSize, gapStrokeSize, true, this.strokeColor);
+      this.fillArea([inicialStrokeX + (totalStrokeSize - gapStrokeSize), inicialStrokeY], totalStrokeSize, gapStrokeSize, false, this.strokeColor);
+      this.fillArea([inicialStrokeX, inicialStrokeY + (totalStrokeSize - gapStrokeSize)], totalStrokeSize, gapStrokeSize, true, this.strokeColor);
+      this.fillArea([inicialStrokeX, inicialStrokeY], totalStrokeSize, gapStrokeSize, false, this.strokeColor);
     }
 
-    fillArea([inicialX, inicialY], this.totalSize, gapSize, true, this.fillColor);
-    fillArea([inicialX + (this.totalSize - gapSize), inicialY], this.totalSize, gapSize, false, this.fillColor);
-    fillArea([inicialX, inicialY + this.totalSize - gapSize], this.totalSize, gapSize, true, this.fillColor);
-    fillArea([inicialX, inicialY], this.totalSize, gapSize, false, this.fillColor);
+    this.fillArea([inicialX, inicialY], this.totalSize, gapSize, true, this.fillColor);
+    this.fillArea([inicialX + (this.totalSize - gapSize), inicialY], this.totalSize, gapSize, false, this.fillColor);
+    this.fillArea([inicialX, inicialY + this.totalSize - gapSize], this.totalSize, gapSize, true, this.fillColor);
+    this.fillArea([inicialX, inicialY], this.totalSize, gapSize, false, this.fillColor);
 
     // fillArea([inicialX + gapSize, inicialY], this.totalSize-gapSize, gapSize, true, this.fillColor,false,0.1);
     // fillArea([inicialX + (this.totalSize - gapSize), inicialY + gapSize-5], this.totalSize-(gapSize-5), gapSize, false, this.fillColor);
@@ -86,7 +86,7 @@ class SpinningSquare {
         start[1] += wholeSize * segment2
       }
 
-      fillArea(start, segment2, segment1 - wholeSize * segment2, !horizontal, fillColor, threshold);
+      this.fillArea(start, segment2, segment1 - wholeSize * segment2, !horizontal, fillColor, threshold);
     }
 
 
